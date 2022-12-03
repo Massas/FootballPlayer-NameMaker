@@ -295,9 +295,9 @@ function Select-Usage {
 
 # main
 $apikey = Get-Apikey
-$gender = "m"
-$isSurname = "no"
-$usage = "ita"
+$gender = ""
+$isSurname = ""
+$usage = ""
 $apicall="https://www.behindthename.com/api/random.json?key=$apikey"
 
 
@@ -332,7 +332,7 @@ while ($true) {
         continue
     }elseif(($select -eq 'c') -or ($select -eq 'C')){
         if($isSurname -ne ""){
-            $tmp = $apicall -replace "&isSurname=$isSurname", ""
+            $tmp = $apicall -replace "&randomsurname=$isSurname", ""
             Write-Host $tmp
             $apicall = $tmp
         }
